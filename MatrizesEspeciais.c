@@ -42,8 +42,9 @@ void Exibir_Matriz_tri(Mat_Tri_Inf X){
 				
 			else printf("%5d",0);
 		}
-	printf ("\n");
+		printf ("\n");
 	}
+	printf ("\n");
 }
  
  
@@ -58,9 +59,9 @@ void Exibir_Matriz_tri(Mat_Tri_Inf X){
 	if(((i>0)&&(i<N+1)) && ((j>0)&&(j<N+1))){
 		k = Map_Mat_tri_inf(i,j);
 		if (k==-1)
-			printf("O Valor procurado é 0");
+			printf("O Valor procurado é 0\n");
 		else
-			printf("O Valor procurado é %5d",X[k]);
+			printf("O Valor procurado é %5d\n",X[k]);
 	}
 	else printf(" Os valores da linha ou coluna estão fora da Matriz de dimensão %d x %d\n",N,N);
 }
