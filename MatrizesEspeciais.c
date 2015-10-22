@@ -34,13 +34,16 @@ void Exibir_Matriz_tri(Mat_Tri_Inf X){
 	printf(" MATRIZ TRIANGULAR INFERIOR \n");
 	printf("=========================== \n \n");
 	for(i=1;i<=N;i++){
-		for(j=1;j<=i;j++){
+		for(j=1;j<=N;j++){
+			
 			k = Map_Mat_tri_inf(i,j);
 			if (k!=-1)
 				printf("%5d",X[k]);
-			else printf("%5d",nulo);
+				
+			else printf("%5d",0);
 		}
 	printf ("\n");
+	}
 }
  
  
@@ -63,10 +66,42 @@ void Exibir_Matriz_tri(Mat_Tri_Inf X){
 }
 
 int main() {
+	int preench, consult, flag;
 	Mat_Tri_Inf a;
-	
-	EntradaRandTri(a);
-	Exibir_Matriz_tri(a);
+	do{
+		do{
+			printf ("Escolha a opção de preenchimento:\n\t1. Preenchimento manual;\n\t2. Preenchimento randomico;\n\t3. Sair\n");
+			scanf ("%d",&preench);
+			if (preench<1||preench>3){
+				preench=0;
+				printf("Entrada inválida!\n");
+			}
+		}while (preench==0);
+		
+		switch (preench) {
+			case 1:	EntradaManual_Tri_Inf(a);
+					break;
+			case 2: EntradaRandTri(a);
+					break;
+		}
+		
+		if(preench!=3){
+			do{
+				printf ("Escolha a opção de visualização:\n\t1. Matriz inteira;\n\t2. Pesquisa componente;\n\t3. Voltar;\n");
+				scanf ("%d", &consult);
+				
+				switch (consult){
+					case 1: Exibir_Matriz_tri(a);
+							break;
+					case 2: Consultar_Elemento_Tri(a);
+							break;
+				}
+				if (consult<1||consult>3){
+					printf ("Entrada inválida!!\n");
+				}
+			}while (consult!=3);
+		}	
+	}while (preench!=3);
 	return 0;
 }
 
