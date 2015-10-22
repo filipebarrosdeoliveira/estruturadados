@@ -15,7 +15,7 @@ void EntradaManual_Diag(Mat_Diag_Simp X){
 void EntradaRand_Diag(Mat_Diag_Simp X){
 	int i;
 	printf ("Escolhendo valores aleatórios...\n");
-	for (i==0; i<N; i++){
+	for (i == 0; i<N; i++){
 		X[i]=(rand() % 40 - 20);
 	}
 }
@@ -24,14 +24,15 @@ void ExibeMatriz_Diag(Mat_Diag_Simp X){
 	int i, j;
 	printf("  MATRIZ DIAGONAL SIMPLES\n");
 	printf("=========================== \n \n");
-	for(i=1;i<=N;i++){
-		for(j=1;j<=N;j++){
+	for(i=0;i<N;i++){
+		for(j=0;j<N;j++){
 			if (i==j)
 				printf("%5d",X[i]);
 			else printf("%5d",0);
 		}
-	printf ("\n");
+		printf ("\n");
 	}
+	printf ("\n");
 }
 
 int Mapeamento_Diag(int i, int j){
@@ -45,17 +46,17 @@ void ConsultaElemento_Diag(Mat_Diag_Simp X, char s){
 	printf("Entre com as coordenadas do elemento para consulta:\n");
 	printf("linha: ");
 	scanf("%d", &i);
-	prinf("\ncoluna: ");
-	scanf("%d", &i);
+	printf("\ncoluna: ");
+	scanf("%d", &j);
 	printf("\n");
-	if (i==j){
-		printf ("O valor de %c[%d][%d] Ã©: %d\n", s, i, i, X[i]);
+	if (i == j){
+		printf ("O valor de %c[%d][%d] é: %d\n", s, i, i, X[i-1]);
 	}else{
-		printf ("O valor de %c[%d][%d] Ã©: 0\n", s, i, i);
+		printf ("O valor de %c[%d][%d] é: 0\n", s, i, i);
 	}
 }
 int main() {
-	int preench, consult, flag;
+	int preench, consult;
 	Mat_Diag_Simp a;
 	do{
 		do{
