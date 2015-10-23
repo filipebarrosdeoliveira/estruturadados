@@ -15,7 +15,7 @@ void EntradaManual_Diag(Mat_Diag_Simp X){
 void EntradaRand_Diag(Mat_Diag_Simp X){
 	int i;
 	printf ("Escolhendo valores aleatórios...\n");
-	for (i == 0; i<N; i++){
+	for (i = 0; i<N; i++){
 		X[i]=(rand() % 40 - 20);
 	}
 }
